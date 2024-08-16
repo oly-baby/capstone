@@ -21,9 +21,6 @@ movie_router = APIRouter(prefix="/movies", tags=["movies"])
 rating_router = APIRouter(prefix="/ratings", tags=["ratings"])
 comments_router = APIRouter(prefix="/comments", tags=["comments"])
 
-@app.get('/')
-def home():
-    return "My Movie Application"
 
 @user_router.post("/signup")
 def signup(user: schema.UserCreate, db: Session = Depends(get_db)):
