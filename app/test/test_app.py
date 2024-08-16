@@ -184,37 +184,8 @@ def test_create_rating(setup_db):
     assert response.json()['rating'] == 4.0
 
 
-# # def test_create_rating(setup_db, create_movie):
-# #     movie_data, token = create_movie
-    
-# #     response = client.post(f'/ratings/{movie_data["id"]}', json={"rating": "4.0"})
-
-# #     # Retrieve ratings for the movie
-# #     response = client.get(f"/ratings/{movie_data['id']}")
 
 
-# #     assert response.status_code == 200
-# #     assert len(response.json()) == 0
-# #     assert response.json()[0]['movie_id'] == movie_data['id']
-
-
-    # create rating for movie not found
-# def test_create_rating_wrond_movie_id(setup_db):
-#     login_response = client.post("/login", data={
-#     "username": "testuser",
-#     "password": "testpassword"
-#     })
-#     token = login_response.json()["access_token"]
-    
-#     wrong_movie_id = 4444
-    
-#     response = client.post('/ratings/{wrong_movie_id}', json={"rating": "4.0"}, headers={
-#         "Authorization": f"Bearer {token}"
-#     })
-    
-#     assert response.status_code == 404
-#     assert response.json()['detail'] == 'movie not found'
-    
     
 # # ratings for a movie
 def test_get_rating_by_movie(setup_db):
